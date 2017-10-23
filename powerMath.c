@@ -1,3 +1,4 @@
+//Raising whole numbers to a power by GL
 #include <stdio.h>
 
 int main(){
