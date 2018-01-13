@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <stdlib.h> //mallloc and memory stuffs
+
+void copiaArreglo(int *a, int n){
+	int *b,i;
+	b = malloc(n* sizeof(int));
+		if(a==NULL){/*NO SE PUDO SHABO :'V*/}
+
+	//copiamos datos
+	for(i=0;i<n;i++){
+		b[i]=a[i];
+	}
+
+	printf("Copiando arreglo...\n\n");
+	printf("Elementos del Arreglo 2 (Copia) son: \n");
+	for(i=0;i<n;i++){
+		printf("%d ",b[i]);
+	}
+	printf("\n");
+
+}
+
+int main(){
+
+	int *a,n,i;
+	printf("Numero de elementos del arreglo: ");
+	scanf("%d", &n);
+
+		/* reservar memoria para almacenar n enteros */
+		a = malloc(n * sizeof(int));
+
+		/* Verificamos que la asignación se haya realizado correctamente */
+		if (a  == NULL) {
+			/* Error al intentar reservar memoria */
+		}
+
+	//leer arreglo1
+	for(i=0;i<n;i++){
+		printf("Ingresa el elemento [%d]: ",i);
+		scanf("%d",&a[i]);
+	}
+
+	//imprimimos arreglo1
+	printf("\nElementos del Arreglo 1 (Original) son: \n");
+	for(i=0;i<n;i++){
+		printf("%d ",a[i]);
+	}
+
+	printf("\n\n");
+
+	copiaArreglo(a,n);
+
+	return 0;
+}
